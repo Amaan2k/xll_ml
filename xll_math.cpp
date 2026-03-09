@@ -21,3 +21,21 @@ double WINAPI xll_erf_as(double x)
 #pragma XLLEXPORT
 	return erf_as(x);
 }
+
+AddIn xai_clamp(
+    Function(XLL_DOUBLE, L"xll_clamp", L"ML.CLAMP")
+    .Arguments({
+        Arg(XLL_DOUBLE, L"x",   L"is the value to clamp."),
+        Arg(XLL_DOUBLE, L"lo",  L"is the minimum value."),
+        Arg(XLL_DOUBLE, L"hi",  L"is the maximum value."),
+        })
+        .Category(CATEGORY)
+    .FunctionHelp(L"Clamp x to the range [lo, hi].")
+);
+double WINAPI xll_clamp(double x, double lo, double hi)
+{
+#pragma XLLEXPORT
+    if (x < lo) return lo;
+    if (x > hi) return hi;
+    return x;
+}

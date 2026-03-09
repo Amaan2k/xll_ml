@@ -244,6 +244,7 @@
     </ClCompile>
     <ClCompile Include="xll_math.cpp" />
     <ClCompile Include="xll_ml.cpp" />
+    <ClCompile Include="xll_option_discrete.cpp" />
     <ClCompile Include="xll_option_normal.cpp" />
     <ClCompile Include="xll_valuation.cpp" />
   </ItemGroup>
